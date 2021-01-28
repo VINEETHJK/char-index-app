@@ -41,5 +41,10 @@ def print_index(index):
     for name, pages in sorted(index.items()):
         print("{:20}".format(name), end="", flush=True)
         for number in pages:
-            print(number, end=", " if not number == pages[-1], else "")
+            print(number, end=", " if not number == pages[-1] else "")
             print()
+
+pages = paginate(data, 350)
+names = get_names(data)
+index = make_index(names, pages)
+print_index(index)
